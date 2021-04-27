@@ -78,7 +78,9 @@ ______
 |
 |________
 ''']
-
+    
+    player1_wins = 0 # variables to keep track of score
+    player2_wins = 0
     replay = 'yes'  # initialize counter loop
     while replay == 'yes':  # Replay loop
         print(hangman_boards[0])  # prints the first hangman board with nothing on it
@@ -115,8 +117,12 @@ ______
                     break
         if "_ " not in board:  # checks if board variable has no blank spaces to check for a win
             print("Congratulations! You won!")
+            player1_wins += 1
+            print("Score: Player 1 = " + player1_wins + " Player 2 = " + player2_wins")
         else:  # if board has blank spaces they lose
             print("Sorry, you lost. Better luck next time.")
+            player2_wins += 1
+            print("Score: Player 1 = " + player1_wins + " Player 2 = " + player2_wins")
         replay = str(input("Would you like to play again? type 'yes' or 'no' ")).lower()  # asks user if they want to reply
         print("Thanks for playing! Have a nice day!")
 
